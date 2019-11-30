@@ -1,2 +1,2 @@
 # explorations
-a few explorations techniques
+a few explorations techniques in Python
