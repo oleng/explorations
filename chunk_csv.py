@@ -12,9 +12,7 @@ def open_csv(filename, rows, dialect='excel'):
     with open(filename, 'r') as f:
         reader = csv.DictReader(f, dialect=dialect)
         for count in range(rows):
-            # process 2 lines each time
-            for i in range(1):
-                yield next(reader)
+            yield next(reader)
 
 
 def get_csv_rows(filename, row_count):
