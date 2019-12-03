@@ -1,9 +1,17 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*.pyc
 *$py.class
 
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
 # C extensions
+*.o
 *.so
 
 # Distribution / packaging
@@ -90,9 +98,12 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
-.spyderproject
-.spyproject
+# Finder files
+.DS_Store?
+.DS_Store
+.Spotlight-V100
+.Trashes
+._*
 
 # Rope project settings
 .ropeproject
@@ -102,3 +113,44 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# IntelliJ IDEA IDE
+.idea
+
+# Windows artifacts
+Desktop.ini
+Thumbs.db
+ehthumbs.db
+
+# Files that contain credentials or personal info
+.extra
+.boto
+.mrjob.conf
+.s3cfg
+.aws/
+
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+logs/
+
+# temporary files
+*.tmp
+tmp/
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+*.csv
