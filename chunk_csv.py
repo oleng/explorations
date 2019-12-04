@@ -1,5 +1,6 @@
-import json, csv
+import csv
 from pprint import pprint
+
 
 def open_csv(filename, rows, dialect='excel'):
     '''
@@ -11,8 +12,12 @@ def open_csv(filename, rows, dialect='excel'):
     '''
     with open(filename, 'r') as f:
         reader = csv.DictReader(f, dialect=dialect)
-        for count in range(rows):
-            yield next(reader)
+        try:
+            for count in range(rows):
+                yield next(reader)
+        except StopIteration as err:
+            print(err, count, ': csv reader exhausted all rows')
+
 
 
 def get_csv_rows(filename, row_count):
@@ -22,7 +27,8 @@ def get_csv_rows(filename, row_count):
     :return: list
             dicts in a list
     '''
-    # there's no need to convert to dict when using python 3.8+: return list(get_csv_rows(...))
+    # there's no need to convert to dict when using python 3.8+:
+    #   return list(get_csv_rows(...))
     csv_rows = [dict(d) for d in list(open_csv(filename, row_count))]
     return csv_rows
 
