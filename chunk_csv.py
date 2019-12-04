@@ -19,7 +19,6 @@ def open_csv(filename, rows, dialect='excel'):
             print(err, count, ': csv reader exhausted all rows')
 
 
-
 def get_csv_rows(filename, row_count):
     '''
     :param: filename: str
